@@ -1,21 +1,21 @@
 resource "aws_key_pair" "eks" {
-  key_name   = "eks"
+  key_name = "eks"
   # you can paste the public key directly like this
-  #public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6ONJth+DzeXbU3oGATxjVmoRjPepdl7sBuPzzQT2Nc sivak@BOOK-I6CR3LQ85Q"
+  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6ONJth+DzeXbU3oGATxjVmoRjPepdl7sBuPzzQT2Nc sivak@BOOK-I6CR3LQ85Q"
   #public_key = file("~/.ssh/eks.pub")
-  public_key = file("D:/joindevops/eks.pub")
+  #public_key = file("D:/joindevops/eks.pub")
   # ~ means windows home directory
 }
 
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
+  source = "terraform-aws-modules/eks/aws"
 
 
   cluster_name    = "${var.project_name}-${var.environment}"
-  cluster_version = "1.30"    
+  cluster_version = "1.30"
   # need to update cluster version here after upgrading the k8s version in aws console
 
-  cluster_endpoint_public_access  = true
+  cluster_endpoint_public_access = true
 
   cluster_addons = {
     coredns                = {}
@@ -44,14 +44,14 @@ module "eks" {
   # comment and uncomment the blue and green node groups accordingly for creating & deleting while version upgrade
   eks_managed_node_groups = {
     blue = {
-      min_size      = 2
-      max_size      = 10
-      desired_size  = 2
+      min_size     = 2
+      max_size     = 10
+      desired_size = 2
       #capacity_type = "SPOT"
       iam_role_additional_policies = {
         AmazonEBSCSIDriverPolicy          = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
         AmazonElasticFileSystemFullAccess = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
-        ElasticLoadBalancingFullAccess = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
+        ElasticLoadBalancingFullAccess    = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
       }
       # EKS takes AWS Linux 2 as it's OS to the nodes
       key_name = aws_key_pair.eks.key_name

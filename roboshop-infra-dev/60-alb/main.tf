@@ -58,7 +58,7 @@ module "records" {
 
   records = [
     {
-      name = "${var.project_name}-${var.environment}" # expense-dev
+      name = "${var.project_name}-${var.environment}" # roboshop-dev
       type = "A"
       alias = {
         name    = module.ingress_alb.dns_name
@@ -69,22 +69,22 @@ module "records" {
   ]
 }
 
-resource "aws_lb_target_group" "expense" {
-  name     = local.resource_name
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = local.vpc_id
+resource "aws_lb_target_group" "roboshop" {
+  name        = local.resource_name
+  port        = 80
+  protocol    = "HTTP"
+  vpc_id      = local.vpc_id
   target_type = "ip"
 
   health_check {
-    healthy_threshold = 2
+    healthy_threshold   = 2
     unhealthy_threshold = 2
-    interval = 5
-    matcher = "200-299"
-    path = "/"
-    port = 80
-    protocol = "HTTP"
-    timeout = 4
+    interval            = 5
+    matcher             = "200-299"
+    path                = "/"
+    port                = 80
+    protocol            = "HTTP"
+    timeout             = 4
   }
 }
 
@@ -94,12 +94,12 @@ resource "aws_lb_listener_rule" "frontend" {
 
   action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.expense.arn
+    target_group_arn = aws_lb_target_group.roboshop.arn
   }
 
   condition {
     host_header {
-      values = ["expense-${var.environment}.${var.zone_name}"] #expense-dev.sprojex.in
+      values = ["roboshop-${var.environment}.${var.zone_name}"] #roboshop-dev.sprojex.in
     }
   }
 }
