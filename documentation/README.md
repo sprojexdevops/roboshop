@@ -14,6 +14,7 @@ Below is the communication between components and dependency. This dependency co
 * Earlier Backend technologies had servers like tomcat, Jboss, IIS, etc.
 * Now all backend technologies are coming up with in built servers.
 * Usually API tier should not opened through internet, it should be only accessible through web tier.
+* Instaed of 'ratings' shown in diagram, we use 'dispatch'
 
 ### DB TIER:
 * Storage of the applications will be here like user data, products, orders data, etc.
