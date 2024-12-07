@@ -122,4 +122,6 @@ Load Schema
 mongosh --host MONGODB-SERVER-IPADDRESS </app/schema/user.js
 ```
 
-
+```
+systemctl restart user
+```
