@@ -6,4 +6,4 @@ Plugins:
 * AWS Steps
 * ANSI color ---> to get colors in logs
 * Rebuilder ---> to know what was done in the earlier build
-* SonarScanner
+* SonarQube Scanner
