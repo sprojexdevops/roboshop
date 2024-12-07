@@ -22,9 +22,12 @@ mysql -h roboshop-dev.czn6yzxlcsiv.us-east-1.rds.amazonaws.com -u root -pRoboSho
 ```
 * Clone shipping component into bastion
 ```
-git clone https://github.com/daws-81s/shipping.git
+git clone https://github.com/sprojexdevops/roboshop.git
 ```
-* Load the data into mysql
+```
+cd /jenkins/CI-build/shipping
+```
+* Load the data into mysql --- update the rds endpoint before running the below commands
 ```
 mysql -h roboshop-dev.czn6yzxlcsiv.us-east-1.rds.amazonaws.com -u root -pRoboShop1 < shipping/db/schema.sql
 ```
