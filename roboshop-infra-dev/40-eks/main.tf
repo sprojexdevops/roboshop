@@ -1,7 +1,7 @@
 resource "aws_key_pair" "eks" {
   key_name = "eks"
   # you can paste the public key directly like this
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6ONJth+DzeXbU3oGATxjVmoRjPepdl7sBuPzzQT2Nc sivak@BOOK-I6CR3LQ85Q"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDW8fMOrnf8AnRODLrqnrA/LBVn/9HpreeLHPNntXQQOcbmCjvWrWZmsa3M2a5f7kgL2/jcYjCYqWmvfuU8vdj6kOJO8oe/gNtK7fL6bNWZ7MWW/nCDTo00qBuR7FPtNMoDjYKSpP5RzgRmcj55UcX6MLEY28tRzl5VxzLUTVpoSSfzZyC8/enM61E88TWkAt2JkE9HXPRK2UR0qrtMwlgFPiqk+5Ym1LCNAfsc1OBWySnQIXIE6tRlnFNmKGAwghyLsL4YK/8O9RKSYGS2giMXhc1LULDrU5y3au+NJux43jkeocmmxfU7YAOg3tmxczxaRci/OVLv1CoUeZ8SwLiDZX+Daus0Ae/ML3y298OQgpUdOyoiMQXyISiGunj9PYRzU+SnKkbATxJKy5CxK1YbiMgUgbxSbIaKIzIEg+h04xRfyScfndW4OMq8elvHWKE0qYe3RlN+ZDz38u76/x5WPRdrqavRYBQaHC+iL5UX/fITlUXcrOnb0YQYNpNkIXM= yeswanth@DESKTOP-UH7DRI1"
   #public_key = file("~/.ssh/eks.pub")
   #public_key = file("D:/joindevops/eks.pub")
   # ~ means windows home directory
