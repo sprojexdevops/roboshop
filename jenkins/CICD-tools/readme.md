@@ -1,9 +1,34 @@
-Plugins:
+# Jenkins
 
+Install below plugins when you started Jenkins.
+
+Plugins:
 * Pipeline stage view
 * Pipeline Utility Steps
 * AWS Credentials
 * AWS Steps
-* ANSI color ---> to get colors in logs
-* Rebuilder ---> to know what was done in the earlier build
-* SonarQube Scanner
+* Rebuild
+* Ansi Color
+* SonarScanner
+
+Restart Jenkins once plugins are installed
+
+### Manage Credentials:
+* We need to add ssh credentials for Jenkins to connect to agent. I am using ID as ssh-auth
+* We need to add aws credentials for Jenkins to connect with AWS for deployments. I am using
+    * aws-creds-dev
+    * aws-creds-prod
+    * aws-creds
+
+### Configure Agent
+
+### Configure Jenkins Shared Libraries
+* Go to Manage Jenkins -> System
+* Find Global Trusted Pipeline Libraries section
+* Name as jenkins-shared-library, default version main and load implicitly
+* Location is https://github.com/sprojexdevops/jenkins/tree/main/jenkins-shared-library/shared-pipelines
+    1. git url: https://github.com/sprojexdevops/jenkins.git
+    2. library path: /jenkins-shared-library/shared-pipelines
+<!-- https://github.com/daws-81s/jenkins-shared-library.git -->
+
+Now Jenkins is ready to use.
