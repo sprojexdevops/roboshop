@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket         = "sprojex-remote-state"
-    key            = "expense-jenkins-acm"
+    key            = "roboshop-acm"
     region         = "us-east-1"
     dynamodb_table = "tf-state-locking"
   }
