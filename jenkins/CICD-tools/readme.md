@@ -26,9 +26,9 @@ Restart Jenkins once plugins are installed
 * Go to Manage Jenkins -> System
 * Find Global Trusted Pipeline Libraries section
 * Name as jenkins-shared-library, default version main and load implicitly
-* Location is https://github.com/sprojexdevops/jenkins/tree/main/jenkins-shared-library/shared-pipelines
-    1. git url: https://github.com/sprojexdevops/jenkins.git
-    2. library path: /jenkins-shared-library/shared-pipelines
+* Location is https://github.com/sprojexdevops/roboshop/tree/main/jenkins/shared-pipelines
+    1. git url: https://github.com/sprojexdevops/roboshop.git
+    2. library path: /jenkins/shared-pipelines
 <!-- https://github.com/daws-81s/jenkins-shared-library.git -->
 
 Now Jenkins is ready to use.
