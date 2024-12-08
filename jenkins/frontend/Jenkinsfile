@@ -20,6 +20,7 @@ pipeline {
         stage('Read the version') {
             steps {
                 script{
+                    // package.json is only for reading version and it is not for nginx configuration
                     def packageJson = readJSON file: 'package.json'
                     appVersion = packageJson.version
                     echo "App version: ${appVersion}"
