@@ -24,6 +24,8 @@ def call(Map configMap){
             stage('Read the version') {
                 steps {
                     script{
+                        // package.json is not for python but just to read the version using the package.json here
+                        // same file is also added in payment folder under CI-build
                         def packageJson = readJSON file: 'package.json'
                         appVersion = packageJson.version
                         echo "App version: ${appVersion}"
