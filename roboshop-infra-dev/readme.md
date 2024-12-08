@@ -25,7 +25,7 @@ mysql -h roboshop-dev.czn6yzxlcsiv.us-east-1.rds.amazonaws.com -u root -pRoboSho
 git clone https://github.com/sprojexdevops/roboshop.git
 ```
 ```
-cd /jenkins/CI-build/
+cd /jenkins/CI-build
 ```
 * Load the data into mysql --- update the rds endpoint before running the below commands
 ```
